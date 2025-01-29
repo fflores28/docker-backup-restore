@@ -38,7 +38,17 @@ chmod +x docker-backup.sh docker-restore.sh
 - Lists available backups. 
 - Prompts for container name & restores it.
 
-
+## Automate Backups with Cron
+To run the backup daily at 2AM:
+1. Open the crontab editor:
+```bash
+crontab -e
+```
+2. Add this line at the bottom:
+```bash
+0 2 * * * $HOME/docker-backup-restore/docker-backup.sh >> $HOME/docker-backup-restore/cron.log 2>&1
+```
+3. Save and exit.
 
 ## Planned Enhancements
 - [] Integrate with Jenkins for automated scheduling.
