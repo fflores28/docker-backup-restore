@@ -29,7 +29,7 @@ chmod +x docker-backup.sh docker-restore.sh
 ./docker-backup.sh
 ```
 - Saves container filesystems & mounted volumes.
-- Stores backups in /opt/docker-backups by default.
+- Stores backups in ~/docker-backup-restore/backups/ by default.
 
 ### Restore a Container from Backup
 ```bash
