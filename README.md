@@ -17,15 +17,33 @@ Automated backup and restore scripts for Docker containers and their volumes.
 ```bash
 git clone https://github.com/your-username/docker-backup-restore.git
 cd docker-backup-restore
+```
 
 ### 2. Make Scripts Executable
 ```bash
 chmod +x docker-backup.sh docker-restore.sh
+```
+## Usage
+### Backup All Running Containers
+```bash
+./docker-backup.sh
+```
+- Saves container filesystems & mounted volumes.
+- Stores backups in /opt/docker-backups by default.
+
+### Restore a Container from Backup
+```bash
+./docker-restore.sh
+```
+- Lists available backups. 
+- Prompts for container name & restores it.
+
+
 
 ## Planned Enhancements
-[] Integrate with Jenkins for automated scheduling.
-[] Convert to a Python script for better logging & notifications. 
-[] Use Ansible for deployment across multiple servers. 
+- [] Integrate with Jenkins for automated scheduling.
+- [] Convert to a Python script for better logging & notifications. 
+- [] Use Ansible for deployment across multiple servers. 
 
 ## Contributing
 Feel free to submit a pull request with improvements or additional features!
