@@ -1,13 +1,15 @@
 #!/bin/bash
 
- # Define backup directory and log file
+# Define directories and log file
  BACKUP_DIR="$HOME/docker-backup-restore/backups"
- LOG_FILE="$BACKUP_DIR/backup.log"
+ LOG_DIR="$HOME/docker-backup-restore/logs"
+ LOG_FILE="$LOG_DIR/backup.log"
  mkdir -p "$BACKUP_DIR" # Ensure the backup directory exists
+ mkdir -p "$LOG_DIR" # Ensure the log directory exists
 
  # Define timestamp
-    TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
-    echo "[$TIMESTAMP] Starting Docker backup..." | tee -a "$LOG_FILE"
+ TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
+ echo "[$TIMESTAMP] Starting Docker backup..." | tee -a "$LOG_FILE"
 
 # Backup each running container
   # Check if there are any running containers

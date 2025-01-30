@@ -1,8 +1,9 @@
 #!/bin/bash
 
- # Define backup directory and log file
+# Define directories and log file
  BACKUP_DIR="$HOME/docker-backup-restore/backups"
- LOG_FILE="$BACKUP_DIR/restore.log"
+ LOG_DIR="$HOME/docker-backup-restore/logs"
+ LOG_FILE="$LOG_DIR/restore.log"
  TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
 
 # List available backups
