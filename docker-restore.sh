@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Define directories and log file
- BACKUP_DIR="$HOME/docker-backup-restore/backups"
- LOG_DIR="$HOME/docker-backup-restore/logs"
- LOG_FILE="$LOG_DIR/restore.log"
- TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
+# Load environment variables
+source "$(dirname "$0")/docker-restore.env"
+
+# Define timestamp
+TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
 
 # List available backups
 echo "Available backups:"
