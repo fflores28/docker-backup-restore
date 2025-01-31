@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Define directories and log file
- BACKUP_DIR="$HOME/docker-backup-restore/backups"
- LOG_DIR="$HOME/docker-backup-restore/logs"
- LOG_FILE="$LOG_DIR/backup.log"
+# Load environment variables
+source "$(dirname "$0")/docker-backup.env"
+
+# Ensure the directories exist
  mkdir -p "$BACKUP_DIR" # Ensure the backup directory exists
  mkdir -p "$LOG_DIR" # Ensure the log directory exists
 
