@@ -23,6 +23,18 @@ cd docker-backup-restore
 ```bash
 chmod +x docker-backup.sh docker-restore.sh
 ```
+
+### 3. Customize the .env files: 
+1. Open `docker-backup.env` and `docker-restore.env`.
+2. Replace the placeholder paths with your actual paths:
+   - `BACKUP_DIR`: Directory to store backups.
+   - `LOG_DIR`: Directory to store log files.
+   - `VOLUME_DIR` (optional): Directory to restore volumes.
+3. Ensure the directories exist:
+   ```bash
+   mkdir -p /path/to/backups
+   mkdir -p /path/to/logs
+
 ## Usage
 ### Backup All Running Containers
 ```bash
