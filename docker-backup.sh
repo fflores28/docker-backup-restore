@@ -4,15 +4,15 @@
 source "$(dirname "$0")/docker-backup.env"
 
 # Ensure the directories exist
- mkdir -p "$BACKUP_DIR" # Ensure the backup directory exists
- mkdir -p "$LOG_DIR" # Ensure the log directory exists
+mkdir -p "$BACKUP_DIR" # Ensure the backup directory exists
+mkdir -p "$LOG_DIR" # Ensure the log directory exists
 
- # Define timestamp
- TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
- echo "[$TIMESTAMP] Starting Docker backup..." | tee -a "$LOG_FILE"
+# Define timestamp
+TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
+echo "[$TIMESTAMP] Starting Docker backup..." | tee -a "$LOG_FILE"
 
 # Backup each running container
-  # Check if there are any running containers
+# Check if there are any running containers
     CONTAINERS=$(docker ps --format "{{.Names}}")
 
     if [ -z "$CONTAINERS" ]; then
